@@ -20,18 +20,43 @@ TEST(AutomataTest, TestOff) {
 TEST(AutomataTest, TestChoice) {
     Automata CoffeeMachine;
     CoffeMachinek.on();
-    CoffeMachine.coin(50);
+    CoffeMachine.coin(150);
     CoffeMachine.getMenu();
-    CoffeMachine.choice(4);
+    CoffeMachine.choice(1);
     EXPECT_EQ(WAIT, CoffeMachine.getState());
 }
 
-TEST(AutomataTest, CancelOrder) {
-    Automata CoffeeBreak;
-    CoffeeBreak.on();
-    CoffeeBreak.coin(200);
-    CoffeeBreak.cancel();
+TEST(AutomataTest, TestCancel) {
+    Automata CoffeMachine;
+    CoffeMachine.on();
+    CoffeMachine.coin(200);
+    CoffeMachine.cancel();
     EXPECT_EQ(WAIT, CoffeeBreak.getState());
+}
+TEST(AutomataTest, TestInvalidNumber) {
+    Automata CoffeMachine;
+    CoffeMachine.on();
+    CoffeMachine.coin(50);
+    CoffeMachine.choice(8);
+    EXPECT_EQ(ACCEPT, CoffeMachine.getState());
+}
+
+TEST(AutomataTest, TestNoMoney) {
+    Automata CoffeMachine;
+    CoffeMachine.on();
+    CoffeMachine.choice(3);
+    EXPECT_EQ(WAIT, CoffeMachine.getState());
+}
+TEST(AutomataTest, TestTwoCycles) {
+    Automata CoffeMachine;
+    CoffeMachine.on();
+    CoffeMachine.coin(200);
+    CoffeMachine.coin(20);
+    CoffeMachine.coin(30);
+    CoffeMachine.choice(1);
+    CoffeMachine.coin(0);
+    CoffeMachine.choice(8);
+    EXPECT_EQ(ACCEPT, CoffeMachine.getState());
 }
 
 
