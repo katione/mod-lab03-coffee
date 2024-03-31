@@ -1,3 +1,4 @@
+// Copyright 2024 katione
 #include <gtest/gtest.h>
 #include "Automata.h"
 
