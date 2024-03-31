@@ -7,19 +7,19 @@ class AutomataTest : public testing::Test {
     Automata CoffeMachine;
 };
 TEST(AutomataTest, TestOn) {
-    Automata CoffeeMachine;
+    Automata CoffeMachine;
     CoffeMachine.on();
-    EXPECT_EQ(WAIT, CoffeeMachine.getState());
+    EXPECT_EQ(WAIT, CoffeMachine.getState());
 }
 
 TEST(AutomataTest, TestOff) {
-    Automata CoffeeMachine;
+    Automata CoffeMachine;
     CoffeMachine.on();
     CoffeMachine.off();
     EXPECT_EQ(OFF, CoffeMachine.getState());
 }
 TEST(AutomataTest, TestChoice) {
-    Automata CoffeeMachine;
+    Automata CoffeMachine;
     CoffeMachinek.on();
     CoffeMachine.coin(150);
     CoffeMachine.getMenu();
@@ -32,7 +32,7 @@ TEST(AutomataTest, TestCancel) {
     CoffeMachine.on();
     CoffeMachine.coin(200);
     CoffeMachine.cancel();
-    EXPECT_EQ(WAIT, CoffeeBreak.getState());
+    EXPECT_EQ(WAIT, CoffeMachine.getState());
 }
 TEST(AutomataTest, TestInvalidNumber) {
     Automata CoffeMachine;
@@ -59,5 +59,3 @@ TEST(AutomataTest, TestTwoCycles) {
     CoffeMachine.choice(8);
     EXPECT_EQ(ACCEPT, CoffeMachine.getState());
 }
-
-
