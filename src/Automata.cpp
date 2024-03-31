@@ -57,12 +57,12 @@ STATES Automata::getState() {
 }
 void Automata::choice(int choice) {
     if (state == ACCEPT) {
-        if (selection < 1 || choice > menu.size()) {
+        if (choice < 1 || choice > menu.size()) {
             std::cout << "Invalid number" << std::endl;
         } else {
             state = CHECK;
-            if (check(selection)) {
-                cook(selection);
+            if (check(choice)) {
+                cook(choice);
             }
         }
     } else {
