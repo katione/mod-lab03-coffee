@@ -3,7 +3,7 @@
 #include "Automata.h"
 
 int main() {
-  Automata CoffeMachine
+  Automata CoffeMachine;
   CoffeMachine.on();
   CoffeMachine.getMenu();
   CoffeMachine.coin(100);
