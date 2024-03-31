@@ -1,10 +1,11 @@
+// Copyright 2024 katione
 #include <iostream>
 #include "Automata.h"
 
 Automata::Automata() {
     cash = 0;
     state = OFF;
-    Menu = { 
+    menu = {
     "Hot chocolate",
     "Espresso",
     "Americano",
@@ -34,7 +35,7 @@ void Automata::off() {
 }
 void Automata::getMenu() {
     if (state == WAIT || state == ACCEPT) {
-        for (int i = 0; i < Menu.size(); i++) {
+        for (int i = 0; i < menu.size(); i++) {
             std::cout << i + 1 << ") " << menu[i]
                 << " - " << prices[i] << ";" << std::endl;
         }
@@ -56,7 +57,7 @@ STATES Automata::getState() {
 }
 void Automata::choice(int choice) {
     if (state == ACCEPT) {
-        if (selection < 1 || choice > Menu.size()) {
+        if (selection < 1 || choice > menu.size()) {
             std::cout << "Invalid number" << std::endl;
         } else {
             state = CHECK;
