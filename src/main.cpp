@@ -18,7 +18,7 @@ int main() {
 
   std::cout << std::endl;
   CoffeMachine.cancel();
-  std::cout << CoffeeMachine.getState() << std::endl;
+  std::cout << CoffeMachine.getState() << std::endl;
   CoffeMachine.off();
   return 0;
 }
