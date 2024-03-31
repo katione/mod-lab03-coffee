@@ -1,3 +1,4 @@
+// Copyright 2024 katione
 #include <iostream>
 #include "Automata.h"
 
