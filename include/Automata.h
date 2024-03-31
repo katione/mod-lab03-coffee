@@ -5,7 +5,7 @@
 #include <vector>
 #include <string>
 
-enum STATES {OFF,WAIT,ACCEPT,CHECK,COOK};
+enum STATES {OFF, WAIT, ACCEPT, CHECK, COOK};
 
 class Automata {
  private:
@@ -29,5 +29,5 @@ class Automata {
     void cancel();
 };
 
-#endif
+#endif // INCLUDE_AUTOMATA_H_
 
