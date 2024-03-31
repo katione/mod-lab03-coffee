@@ -20,7 +20,7 @@ TEST(AutomataTest, TestOff) {
 }
 TEST(AutomataTest, TestChoice) {
     Automata CoffeMachine;
-    CoffeMachinek.on();
+    CoffeMachine.on();
     CoffeMachine.coin(150);
     CoffeMachine.getMenu();
     CoffeMachine.choice(1);
